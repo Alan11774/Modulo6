@@ -3,23 +3,19 @@ Practica 1
 
 Overview
 
-Practica 1 is an Android application designed to manage and display a list of lawyers categorized by their specialties. The app provides a user-friendly interface to view, add, and manage lawyer information efficiently.  
+Practica 1:
+Alan Ulises Mendoza González
+
+
 Features:
     Lawyer Categories: View a list of lawyer categories.
     Lawyer Details: Display detailed information about each lawyer.
     Add Lawyer: Add new lawyers to the list.
     Responsive UI: Modern and responsive user interface using Material Design components.
 Screenshots
-<img src="screenshots/main_screen.png" alt="Main Screen"></img> <img src="screenshots/add_lawyer.png" alt="Add Lawyer"></img>  
 
-Installation
+<img width="332" alt="Captura de pantalla 2024-09-29 a la(s) 11 34 10 p m" src="https://github.com/user-attachments/assets/a76dc968-0502-4dd0-ba90-4d4bee49bbfe">
 
-Clone the repository:
-git clone https://github.com/alanulises666/practica1.git
-Open the project in Android Studio.
-Build the project to download all dependencies.
-Run the application on an emulator or physical device.
-Usage
 
 Main Screen: Displays a list of lawyer categories.
 
