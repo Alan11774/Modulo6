@@ -6,15 +6,16 @@ Overview
 Practica 1:
 Alan Ulises Mendoza González
 
+Screenshots
+
+<img width="332" alt="Captura de pantalla 2024-09-29 a la(s) 11 34 10 p m" src="https://github.com/user-attachments/assets/a76dc968-0502-4dd0-ba90-4d4bee49bbfe">
+
 
 Features:
     Lawyer Categories: View a list of lawyer categories.
     Lawyer Details: Display detailed information about each lawyer.
     Add Lawyer: Add new lawyers to the list.
     Responsive UI: Modern and responsive user interface using Material Design components.
-Screenshots
-
-<img width="332" alt="Captura de pantalla 2024-09-29 a la(s) 11 34 10 p m" src="https://github.com/user-attachments/assets/a76dc968-0502-4dd0-ba90-4d4bee49bbfe">
 
 
 Main Screen: Displays a list of lawyer categories.
