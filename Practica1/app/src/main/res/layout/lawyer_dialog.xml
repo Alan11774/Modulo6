@@ -29,7 +29,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:startIconDrawable="@drawable/ic_title">
+        app:startIconDrawable="@drawable/baseline_school_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietCategory"
@@ -58,7 +58,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:startIconDrawable="@drawable/ic_genre">
+        app:startIconDrawable="@drawable/baseline_library_books_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietSubcategory"
@@ -87,7 +87,7 @@
         app:boxCornerRadiusBottomStart="16dp"
         app:boxCornerRadiusTopEnd="16dp"
         app:boxCornerRadiusTopStart="16dp"
-        app:startIconDrawable="@drawable/ic_developer">
+        app:startIconDrawable="@drawable/baseline_cell_tower_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietActiveLawyers"
