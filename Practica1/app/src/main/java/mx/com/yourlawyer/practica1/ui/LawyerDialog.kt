@@ -5,7 +5,9 @@ import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
@@ -19,13 +21,6 @@ import mx.com.yourlawyer.practica1.data.LawyerRepository
 import mx.com.yourlawyer.practica1.data.db.model.LawyerEntity
 import mx.com.yourlawyer.practica1.databinding.LawyerDialogBinding
 import java.io.IOException
-
-// This script is for
-// - Create the LawyerDialog class
-// - Create the LawyerDialogBinding class
-// - Create the LawyerDialog class to show the dialog to add, update or delete a lawyer
-// - Create the LawyerDialogBinding class to bind the layout of the dialog
-
 
 class LawyerDialog(
     private val newLawyer: Boolean = true,
@@ -50,7 +45,6 @@ class LawyerDialog(
 
     private lateinit var repository: LawyerRepository
 
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         _binding = LawyerDialogBinding.inflate(requireActivity().layoutInflater)
 
@@ -59,9 +53,18 @@ class LawyerDialog(
 
         builder = AlertDialog.Builder(requireContext())
 
+        //  Spinner Configuration
+        val categories = resources.getStringArray(R.array.category_array)
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, categories)
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        binding.spinnerCategory.adapter = adapter
+
         //Establecemos en los text input edit text los valores del objeto game
         binding.apply {
-            tietCategory.setText(lawyer.category)
+            spinnerCategory.setSelection(categories.indexOf(lawyer.category))
             tietSubcategory.setText(lawyer.subcategory)
             tietActiveLawyers.setText(lawyer.activeLawyers.toString())
         }
@@ -74,14 +77,13 @@ class LawyerDialog(
                 //asignamos a nuestro objeto game
                 binding.apply {
                     lawyer.apply {
-                        category = tietCategory.text.toString()
+                        category = spinnerCategory.selectedItem.toString()
                         subcategory = tietSubcategory.text.toString()
                         activeLawyers = tietActiveLawyers.text.toString().toInt() // The type of data is Int
                     }
                 }
 
                 try{
-
                     lifecycleScope.launch(Dispatchers.IO) {
                         val result = async {
                             repository.insertLawyer(lawyer)
@@ -97,31 +99,24 @@ class LawyerDialog(
                             updateUI()
                         }
                     }
-
-
-
-                }catch (e: IOException){
-
+                } catch (e: IOException) {
                     message(getString(R.string.error_saving_the_lawyer))
-
                 }
 
             }, {
                 //Acción de cancelar
-
             })
         else
             buildDialog(getString(R.string.update), getString(R.string.erase), {
                 binding.apply {
                     lawyer.apply {
-                        category = tietCategory.text.toString()
+                        category = spinnerCategory.selectedItem.toString()
                         subcategory = tietSubcategory.text.toString()
                         activeLawyers = tietActiveLawyers.text.toString().toInt() // The type of data is Int
                     }
                 }
 
                 try{
-
                     lifecycleScope.launch(Dispatchers.IO) {
                         val result = async {
                             repository.updateLawyer(lawyer)
@@ -135,17 +130,11 @@ class LawyerDialog(
                             updateUI()
                         }
                     }
-
-
-
-                }catch (e: IOException){
-
-                    message( getString(R.string.error_updating_the_lawyer))
-
+                } catch (e: IOException) {
+                    message(getString(R.string.error_updating_the_lawyer))
                 }
 
             }, {
-
                 val context = requireContext()
 
                 AlertDialog.Builder(requireContext())
@@ -154,7 +143,6 @@ class LawyerDialog(
                     .setPositiveButton(getString(R.string.ok)){ _, _ ->
                         try{
                             lifecycleScope.launch(Dispatchers.IO) {
-
                                 val result = async {
                                     repository.deleteLawyer(lawyer)
                                 }
@@ -162,28 +150,20 @@ class LawyerDialog(
                                 result.await()
 
                                 withContext(Dispatchers.Main){
-
                                     message(context.getString(R.string.lawyer_removed))
 
                                     updateUI()
                                 }
                             }
-
-
-                        }catch (e: IOException){
-
+                        } catch (e: IOException) {
                             message(getString(R.string.error_lawyer_delete))
-
                         }
                     }
                     .setNegativeButton(getString(R.string.cancel)){ dialog, _ ->
                         dialog.dismiss()
                     }
                     .create().show()
-
             })
-
-
 
         return dialog
     }
@@ -203,23 +183,18 @@ class LawyerDialog(
 
         saveButton?.isEnabled = false
 
-
         binding.apply {
             setupTextWatcher(
-                tietCategory,
                 tietSubcategory,
                 tietActiveLawyers
             )
         }
-
     }
 
-
     private fun validateFields(): Boolean
-            = binding.tietCategory.text.toString().isNotEmpty() &&
+            = binding.spinnerCategory.selectedItem.toString().isNotEmpty() &&
             binding.tietSubcategory.text.toString().isNotEmpty() &&
             binding.tietActiveLawyers.text.toString().isNotEmpty()
-
 
     private fun setupTextWatcher(vararg textFields: TextInputEditText){
         val textWatcher = object: TextWatcher {
@@ -237,7 +212,6 @@ class LawyerDialog(
         }
     }
 
-
     private fun buildDialog(
         btn1Text: String,
         btn2Text: String,
@@ -254,6 +228,4 @@ class LawyerDialog(
                 negativeButton()
             }
             .create()
-
-
 }

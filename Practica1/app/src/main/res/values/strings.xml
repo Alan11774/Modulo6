@@ -69,4 +69,12 @@
     <string name="add_element">Add element</string>
     <string name="dialog1">dialog1</string>
     <string name="lawyers_categories">Lawyers Categories</string>
+    <string-array name="category_array">
+        <item>Derecho Penal</item>
+        <item>Derecho Civil</item>
+        <item>Derecho Laboral</item>
+        <item>Derecho Familiar</item>
+        <item>Derecho Mercantil</item>
+        <item>Derecho Administrativo</item>
+    </string-array>
 </resources>
