@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import mx.com.yourlawyer.practica2.R
 import mx.com.yourlawyer.practica2.application.LawyersRfApp
 import mx.com.yourlawyer.practica2.data.LawyerRepository
 import mx.com.yourlawyer.practica2.data.remote.model.LawyerDetailDto
@@ -34,7 +35,7 @@ class LawyerDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let { args ->
             lawyerId = args.getString(LAWYER_ID)
-            Log.d(Constants.LOGTAG, "Id recibido $lawyerId")
+            Log.d(Constants.LOGTAG, getString(R.string.id_recibido, lawyerId))
         }
     }
 
@@ -46,19 +47,12 @@ class LawyerDetailFragment : Fragment() {
         return binding.root
     }
 
-    //Se manda llamar ya cuando el fragment es visible en pantalla
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //Obteniendo la instancia al repositorio
         repository = (requireActivity().application as LawyersRfApp).repository
 
         lawyerId?.let{ id ->
-            //Hago la llamada al endpoint para consumir los detalles del juego
-
-            //val call: Call<LawyerDetailDto> = repository.getGameDetail(id)
-
-            //Para apiary
             val call: Call<LawyerDetailDto> = repository.getLawyerDetailApiary(id)
 
             call.enqueue(object: Callback<LawyerDetailDto> {
@@ -79,6 +73,8 @@ class LawyerDetailFragment : Fragment() {
                             .into(ivImage)*/
 
                         tvLongDesc.text = response.body()?.description
+                        tvSubcategory.text = response.body()?.subcategory?.joinToString(", ")
+                        tvExamples.text = response.body()?.examples?.joinToString(", ")
 
                         //Para justificar el texto de un textview
                         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) //Q corresponde a Android 10

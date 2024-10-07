@@ -56,6 +56,18 @@
                         tools:src="@mipmap/ic_launcher" />
 
                     <TextView
+                        android:id="@+id/tvSubcategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:text="@string/subcategory" />
+                    <TextView
                         android:id="@+id/tvLongDesc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -66,7 +78,19 @@
                         android:paddingBottom="10dp"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        tools:text="Description" />
+                        tools:text="@string/descripcion_detail" />
+                    <TextView
+                        android:id="@+id/tvExamples"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:text="@string/examples" />
                 </LinearLayout>
             </ScrollView>
 

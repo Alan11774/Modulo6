@@ -48,4 +48,8 @@
     <string name="cantidad_de_abogados">Cantidad de abogados</string>
     <string name="Subcategory">Subcategorias:</string>
     <string name="descripcion">Descripción</string>
+    <string name="id_recibido">Id recibido %1$s</string>
+    <string name="subcategory">Subcategoria</string>
+    <string name="descripcion_detail">Descripción</string>
+    <string name="examples">ejemplos:</string>
 </resources>

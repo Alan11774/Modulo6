@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius="10dp" />
+        app:riv_corner_radius="20dp" />
 
 
     <TextView
@@ -39,7 +39,7 @@
         android:fontFamily="@font/ubuntu_bold"
         android:includeFontPadding="false"
         android:paddingTop="8dp"
-        android:textColor="#CBD5ED"
+        android:textColor="@color/gray"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
