@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#141A31"
+    android:background="#FFFFFF"
     tools:context=".ui.fragments.LawyerDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,8 +42,9 @@
                         android:fontFamily="@font/ubuntu_bold"
                         android:gravity="center_horizontal"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="25sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
                         tools:text="Title" />
 
                     <com.makeramen.roundedimageview.RoundedImageView
@@ -64,7 +65,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/gray"
                         android:textSize="20sp"
                         tools:text="@string/subcategory" />
                     <TextView
@@ -76,7 +77,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/gray"
                         android:textSize="20sp"
                         tools:text="@string/descripcion_detail" />
                     <TextView
@@ -88,7 +89,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/gray"
                         android:textSize="20sp"
                         tools:text="@string/examples" />
                 </LinearLayout>
@@ -96,8 +97,8 @@
 
             <ProgressBar
                 android:id="@+id/pbLoading"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_centerInParent="true"
                 android:indeterminateDrawable="@drawable/loading_anim"
                 android:indeterminateDuration="1500"

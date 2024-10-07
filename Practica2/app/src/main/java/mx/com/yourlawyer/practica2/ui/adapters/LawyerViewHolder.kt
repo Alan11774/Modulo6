@@ -17,6 +17,10 @@ class LawyerViewHolder (
         Glide.with(binding.root.context)
             .load(lawyer.image)
             .into(binding.ivThumbnail)
+        binding.tvDeveloper.text = lawyer.subcategory?.joinToString(", ")
+        binding.tvReleased.text = lawyer.activeLawyers
+        binding.tvRating.text = lawyer.id
+
 
         //Con Picasso
         /*Picasso.get()
