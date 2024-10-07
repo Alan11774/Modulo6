@@ -16,16 +16,16 @@ interface LawyersApi {
         @Url url: String?
     ): Call<MutableList<LawyerDto>>
 
-    @GET("lawyer/type?")
+    @GET("lawyer/types?")
     fun getLawyerDetail(
         @Query("id") id: String?/*,
         @Query("name") name: String?*/
     ): Call<LawyerDetailDto>
 
-    @GET("lawyer/type")
+    @GET("lawyer/types")
     fun getLawyersApiary(): Call<MutableList<LawyerDto>>
 
-    @GET("lawyer/type/{id}")
+    @GET("lawyer/types/{id}")
     fun getLawyerDetailApiary(
         @Path("id") id: String?
     ): Call<LawyerDetailDto>

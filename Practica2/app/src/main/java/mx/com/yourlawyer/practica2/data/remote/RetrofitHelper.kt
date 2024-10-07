@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitHelper {
     fun getRetrofit(): Retrofit {
 
-        val apiKey = ""
+        val apiKey = "AIzaSyDW3zbpWFqDjDQruTpvTQYI0r_zcJpqg6M"
 
         val interceptor = HttpLoggingInterceptor().apply {
             //Para que el interceptor me dé mensajes a nivel del

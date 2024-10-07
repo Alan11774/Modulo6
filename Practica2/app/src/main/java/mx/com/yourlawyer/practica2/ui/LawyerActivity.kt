@@ -17,7 +17,6 @@ import mx.com.yourlawyer.practica2.data.remote.LawyerApi
 import mx.com.yourlawyer.practica2.data.remote.model.LawyerDetailDto
 import mx.com.yourlawyer.practica2.data.remote.model.LawyerDetailDtoApi
 import mx.com.yourlawyer.practica2.databinding.ActivityLawyerBinding
-import mx.com.yourlawyer.practica2.databinding.FragmentFirstBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

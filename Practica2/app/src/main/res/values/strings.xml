@@ -43,4 +43,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="error_no_conexion_disponible">Error: No hay conexión disponible</string>
+    <string name="nombre_categoria">Nombre Categoria</string>
+    <string name="cantidad_de_abogados">Cantidad de abogados</string>
+    <string name="Subcategory">Subcategorias:</string>
+    <string name="descripcion">Descripción</string>
 </resources>

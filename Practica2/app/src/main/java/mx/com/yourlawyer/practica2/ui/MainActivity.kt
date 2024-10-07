@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    /*private lateinit var repository: GameRepository
-    private lateinit var retrofit: Retrofit*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        //Mostramos el fragment inicial GamesListFragment
         if(savedInstanceState == null){
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LawyersListFragment())

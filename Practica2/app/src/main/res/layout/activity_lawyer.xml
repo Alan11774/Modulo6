@@ -21,7 +21,7 @@
         android:id="@+id/tvPokemon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Nombre Pokémon"
+        tools:text="@string/nombre_categoria"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivPokemon"
         app:layout_constraintEnd_toEndOf="parent"

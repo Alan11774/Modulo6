@@ -75,7 +75,7 @@ class LawyersListFragment : Fragment() {
             override fun onFailure(p0: Call<MutableList<LawyerDto>>, p1: Throwable) {
                 Toast.makeText(
                     requireContext(),
-                    "Error: No hay conexión disponible",
+                    getString(R.string.error_no_conexion_disponible),
                     Toast.LENGTH_SHORT
                 ).show()
                 binding.pbLoading.visibility = View.GONE
