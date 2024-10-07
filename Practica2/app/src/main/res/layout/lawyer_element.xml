@@ -11,7 +11,7 @@
     <View
         android:id="@+id/viewBackground"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="120dp"
         android:background="@drawable/background_game"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,8 +25,10 @@
         android:layout_marginEnd="5dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="@id/guideline8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:riv_border_color="@color/gray"
+        app:riv_border_width="1dp"
         app:riv_corner_radius="20dp" />
 
 
@@ -40,6 +42,7 @@
         android:includeFontPadding="false"
         android:paddingTop="8dp"
         android:textColor="@color/gray"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +61,8 @@
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
         android:text="@string/Subcategory"
-        android:textColor="#3FE0DD"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +79,8 @@
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
         android:text="@string/cantidad_de_abogados"
-        android:textColor="#4A5B82"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
@@ -92,8 +97,9 @@
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
         android:text="@string/descripcion"
-        android:textColor="#F5DC53"
+        android:textColor="@color/gray"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@id/guideline4"
@@ -104,21 +110,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="120dp" />
+        app:layout_constraintGuide_begin="140dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="105dp" />
+        app:layout_constraintGuide_begin="120dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="90dp" />
+        app:layout_constraintGuide_begin="110dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -132,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="50dp" />
+        app:layout_constraintGuide_begin="60dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
