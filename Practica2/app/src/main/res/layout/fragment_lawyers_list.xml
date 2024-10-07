@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#141A31"
+    android:background="#1E1E1C"
     tools:context=".ui.fragments.LawyersListFragment">
 
     <ProgressBar
         android:id="@+id/pbLoading"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:indeterminateDrawable="@drawable/loading_anim"
         android:indeterminateDuration="1500"

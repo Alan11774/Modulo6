@@ -84,7 +84,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline4"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="@id/guideline5" />
 
     <TextView
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@id/guideline4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline3"/>
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
