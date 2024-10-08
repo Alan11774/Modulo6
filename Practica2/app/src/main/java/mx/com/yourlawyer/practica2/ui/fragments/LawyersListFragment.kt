@@ -54,21 +54,26 @@ class LawyersListFragment : Fragment() {
             ) {
                 binding.pbLoading.visibility = View.GONE
 
-                response.body()?.let { lawyers ->
-
-                    //Le pasamos los juegos al recycler view y lo instanciamos
-                    binding.rvLawyers.apply {
-                        layoutManager = LinearLayoutManager(requireContext())
-                        adapter = LawyersAdapter(lawyers) { lawyer ->
-                            //Aquí realizamos la acción para ir a ver los detalles del juego
-                            lawyer.id?.let { id ->
-                                requireActivity().supportFragmentManager.beginTransaction()
-                                    .replace(R.id.fragment_container, LawyerDetailFragment.newInstance(id))
-                                    .addToBackStack(null)
-                                    .commit()
+                if (response.isSuccessful) {
+                    response.body()?.let { lawyers ->
+                        binding.rvLawyers.apply {
+                            layoutManager = LinearLayoutManager(requireContext())
+                            adapter = LawyersAdapter(lawyers) { lawyer ->
+                                lawyer.id?.let { id ->
+                                    requireActivity().supportFragmentManager.beginTransaction()
+                                        .replace(R.id.fragment_container, LawyerDetailFragment.newInstance(id))
+                                        .addToBackStack(null)
+                                        .commit()
+                                }
                             }
                         }
+                    } ?: run {
+                        Toast.makeText(requireContext(),
+                            getString(R.string.no_lawyers_found), Toast.LENGTH_SHORT).show()
                     }
+                } else {
+                    Toast.makeText(requireContext(),
+                        getString(R.string.failed_to_retrieve_lawyers), Toast.LENGTH_SHORT).show()
                 }
             }
 

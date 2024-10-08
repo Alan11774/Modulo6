@@ -12,8 +12,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:indeterminateDrawable="@drawable/loading_anim"
-        android:indeterminateDuration="1500"
-        />
+        android:indeterminateDuration="1500" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLawyers"

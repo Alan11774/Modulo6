@@ -10,7 +10,7 @@ import mx.com.yourlawyer.practica2.ui.MainActivity
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash) // Asegúrate de tener un layout para el splash screen
+        setContentView(R.layout.activity_splash) // activity_splash.xml
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))

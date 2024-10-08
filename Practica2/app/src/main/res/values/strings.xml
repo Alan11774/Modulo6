@@ -52,4 +52,13 @@
     <string name="subcategory">Subcategoria</string>
     <string name="descripcion_detail">Descripción</string>
     <string name="examples">ejemplos:</string>
+    <string name="url_de_lawyer">URL del lawyer: %1$s</string>
+    <string name="url_del_lawyer_normal">URL del lawyer normal: %1$s</string>
+    <string name="no_lawyers_found">No se encontraron abogados</string>
+    <string name="failed_to_retrieve_lawyers">Fallo al recuperar abogados</string>
+    <string name="descripcion_menus">Descripcion: %1$s</string>
+    <string name="subcategoria_menus">Subcategoria: %1$s</string>
+    <string name="ejemplos_menus">Ejemplos: %1$s</string>
+    <string name="abogados_activos_menus">Abogados Activos: %1$s</string>
+    <string name="id_menus">ID: %1$s</string>
 </resources>

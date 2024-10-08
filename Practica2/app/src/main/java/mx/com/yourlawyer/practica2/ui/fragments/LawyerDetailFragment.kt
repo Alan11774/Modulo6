@@ -1,5 +1,6 @@
 package mx.com.yourlawyer.practica2.ui.fragments
 
+import android.annotation.SuppressLint
 import android.graphics.text.LineBreaker
 import android.os.Build
 import android.os.Bundle
@@ -56,6 +57,7 @@ class LawyerDetailFragment : Fragment() {
             val call: Call<LawyerDetailDto> = repository.getLawyerDetailApiary(id)
 
             call.enqueue(object: Callback<LawyerDetailDto> {
+                @SuppressLint("SetTextI18n")
                 override fun onResponse(p0: Call<LawyerDetailDto>, response: Response<LawyerDetailDto>) {
 
                     binding.apply {
@@ -72,9 +74,16 @@ class LawyerDetailFragment : Fragment() {
                             .load(response.body()?.image)
                             .into(ivImage)*/
 
-                        tvLongDesc.text = response.body()?.description
-                        tvSubcategory.text = response.body()?.subcategory?.joinToString(", ")
-                        tvExamples.text = response.body()?.examples?.joinToString(", ")
+                        tvLongDesc.text =
+                            getString(R.string.descripcion_menus, response.body()?.description)
+                        tvSubcategory.text = getString(
+                            R.string.subcategoria_menus,
+                            response.body()?.subcategory?.joinToString(", ")
+                        )
+                        tvExamples.text = getString(
+                            R.string.ejemplos_menus,
+                            response.body()?.examples?.joinToString(", ")
+                        )
 
                         //Para justificar el texto de un textview
                         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) //Q corresponde a Android 10

@@ -40,13 +40,7 @@ class LawyerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLawyerBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         //Log.d(LOGTAG, "Hola")
 
@@ -63,12 +57,12 @@ class LawyerActivity : AppCompatActivity() {
             override fun onResponse(p0: Call<LawyerDetailDtoApi>, response: Response<LawyerDetailDtoApi>) {
                 Log.d(
                     LOGTAG,
-                    "URL del lawyer normal: ${response.body()?.category}"
+                    getString(R.string.url_del_lawyer_normal, response.body()?.category)
                 )
 
                 Log.d(
                     LOGTAG,
-                    "URL del lawyer shiny: ${response.body()?.subcategory}"
+                    getString(R.string.url_de_lawyer, response.body()?.subcategory)
                 )
 
                 response.body()?.description
@@ -79,9 +73,6 @@ class LawyerActivity : AppCompatActivity() {
                     .load(response.body()?.image)
                     .into(binding.ivPokemon)
 
-                /*Glide.with(this@PokemonActivity)
-                    .load(response.body()?.sprites?.other?.officialArtwork?.frontDefault)
-                    .into(binding.ivPokemon)*/
             }
 
             override fun onFailure(p0: Call<LawyerDetailDtoApi>, p1: Throwable) {
