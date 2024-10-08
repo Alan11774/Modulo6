@@ -66,7 +66,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         tools:text="@string/subcategory" />
                     <TextView
@@ -78,7 +78,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         tools:text="@string/descripcion_detail" />
                     <TextView
@@ -90,7 +90,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/black"
                         android:textSize="20sp"
                         tools:text="@string/examples" />
                 </LinearLayout>
